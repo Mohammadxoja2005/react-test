@@ -9,12 +9,10 @@ const Todos: FC = observer(() => {
     const [isFetching, setIsFetching] = useState<boolean>(true);
 
     useEffect(() => {
-        // if (isFetching) {
-            todos.fetchTodosFn()
-                .finally(() => {
-                    setIsFetching(false)
-                })
-        // }
+        todos.fetchTodosFn()
+            .finally(() => {
+                setIsFetching(false)
+            })
     }, [isFetching])
 
     useEffect(() => {
