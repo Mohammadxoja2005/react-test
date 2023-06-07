@@ -47,6 +47,9 @@ const Todos: FC = observer(() => {
                         )
                     })
                 }
+                {isFetching ?
+                    <div>Loading...</div>
+                    : null}
             </div>
         </div>
     )
