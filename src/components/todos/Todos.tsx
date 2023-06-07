@@ -26,7 +26,10 @@ const Todos: FC = observer(() => {
     })
 
     const scrollFn = (e: Event): void => {
-        if ((e.target as Document).documentElement.scrollHeight - ((e.target as Document).documentElement.scrollTop + window.innerHeight) < 100
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrollOffset = 300;
+
+        if (scrollHeight - scrollTop - clientHeight < scrollOffset
             && todos.fetchedTodos.length < todos.todosTotalCount) {
             setIsFetching(true);
         }
