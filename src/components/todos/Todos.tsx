@@ -35,8 +35,7 @@ const Todos: FC = observer(() => {
     return (
         <div className={styles.todos}>
             <div className={styles.todos_container}>
-                {!todos.isLoading
-                    ?
+                {
                     todos.fetchedTodos.map((todo) => {
                         return (
                             <div key={todo.id} className={styles.todos_list}>
@@ -44,7 +43,7 @@ const Todos: FC = observer(() => {
                             </div>
                         )
                     })
-                    : <div>Loading...</div>}
+                }
             </div>
         </div>
     )
