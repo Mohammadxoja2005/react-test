@@ -3,7 +3,7 @@ import { makeAutoObservable } from "mobx";
 import axios from 'axios';
 
 class Todos {
-    fetchedTodos: any = [];
+    fetchedTodos: Array<{ id: number, title: string }> = [];
     isLoading: boolean = false;
 
     constructor() {

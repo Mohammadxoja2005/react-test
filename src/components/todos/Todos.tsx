@@ -17,9 +17,13 @@ const Todos: FC = observer(() => {
             <div className={styles.todos_container}>
                 {!todos.isLoading
                     ?
-                    <div className={styles.todos_list}>
-                        <p className={styles.todos_list_name}>{'name'}</p>
-                    </div>
+                    todos.fetchedTodos.map((todo) => {
+                        return (
+                            <div key={todo.id} className={styles.todos_list}>
+                                <p className={styles.todos_list_name}>{todo.title}</p>
+                            </div>
+                        )
+                    })
                     : <div>Loading...</div>}
             </div>
         </div>
